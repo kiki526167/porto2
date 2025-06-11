@@ -1,0 +1,755 @@
+*{
+    margin: 0;
+    text-decoration: none;
+    padding: 0;
+}
+
+:root{
+    --varfontLobster: "Lobster", sans-serif;
+    --varFontKarla : "Karla", sans-serif;
+    --varfont3: "Montserrat";
+    --varfont4 : "Monsieur La Doulaise", cursive;
+    /* --varfont5 : "Edu VIC WA NT Hand Pre"; */
+}
+
+body{
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.page1 {
+    display: flex;
+    position: relative; /* penting untuk posisi pseudo-element */
+    background-image: url(asset/img/page1.jpg);
+    min-height: 100vh;
+    flex-direction: column; /* supaya isi tersusun dari atas ke bawah */
+    padding: 2rem;
+    background-size: cover;        
+    background-position: center; 
+    justify-content: center;  
+    background-repeat: no-repeat;
+    z-index: 0; /* supaya pseudo-element bisa diatur posisinya */
+}
+
+.page1::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* ubah warna dan tingkat transparansi sesuai keinginan */
+    z-index: 1;
+}
+
+/* isi halaman tetap terlihat di atas overlay */
+.page1 > * {
+    position: relative;
+    z-index: 2;
+}
+.back{
+    background-color: #251414;
+}
+
+.containerpage1 {
+    position: absolute;
+    top: 60%; /* Sedikit di bawah tengah */
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* text-align: center; */
+    color: #251414;
+    font-family: var(--varFontKarla);
+    padding: 20px;
+    /* border-radius: 10px; */
+    width: 80%;
+    max-width: 80%;
+    /* margin-top: 50px; */
+    bottom: 10px;
+    
+}
+
+.containerpage1 .heropage1 p{
+  font-family: var(--varFontKarla);
+  font-size: 15px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.heropage1 .tebal{
+  font-size: 55px !important;
+  font-weight: 600;
+  margin-top: -20px;
+  font-family: var(--varfont3) !important;
+}
+
+.heropage1 a{
+  border: 0.5px solid #fff;
+  padding: 5px 10px;
+  color: #fff;
+  background-color: none;
+  font-size: 13px;
+}
+
+#countdown {
+  display: flex;
+  gap: 5px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+#countdown div {
+  background: #222;
+  color: #fff;
+  padding: 28px 5PX;
+  border-radius: 10px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  min-width: 80px;
+  /* min-height: 60px; */
+}
+#countdown p {
+  margin: 10px 0 0;
+  font-size: 14px;
+}
+
+
+/* page 2 start */
+
+.page2{
+    display: flex;
+    position: relative; /* penting untuk posisi pseudo-element */
+    background-color: antiquewhite;
+    min-height: 100vh;
+    flex-direction: column; /* supaya isi tersusun dari atas ke bawah */
+    /* padding: 2rem;     */
+    background-position: center; 
+    justify-content: center;  
+    z-index: 0;
+}
+
+.containerpage2{
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.containerpage2 .heropage2{
+  margin: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ini tetap bikin konten lain di tengah */
+}
+
+.heropage2 h4{
+  font-family: var(--varfont3);
+  font-size: 44px;
+  color: #251414;
+}
+
+.garis-link {
+  align-self: flex-start; /* ini override agar hanya elemen ini ke kiri */
+  margin-top: 20px;
+  position: relative;
+  display: inline-block;
+  padding-right: 10px;
+  text-decoration: none;
+  color: black;
+  margin-top: 20px;
+  margin-left: 30px;
+  font-family: var(--varFontKarla);
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.garis-link::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-left: 10px;
+  width: 250px; /* sesuaikan panjang garis yang kamu mau */
+  height: 2px;
+  background-color: black;
+  transform: translateY(-50%);
+}
+
+.heropage2 .hero{
+  margin: 20px ;
+  font-size: 15px;
+  font-family: var(--varFontKarla);
+  color: rgba(37, 20, 20,0.9);
+}
+.heropage2 img{
+  width: 250px;
+  height: 350px;
+  border-radius: 0 55px 0 55px;
+}
+
+.heropage2 .gelar{
+  font-size: 35px;
+  font-family: var(--varFontKarla);
+  align-self: flex-start;
+  text-align: left;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.heropage2 .nama{
+  text-align: left;
+  align-self: flex-start;
+  font-size: 14px;
+  margin: 20px;
+  font-family: var(--varFontKarla);
+}
+
+.heropage2 .laki{
+  margin-top: 20px;
+}
+
+.heropage2 .gelar1{
+  font-size: 35px;
+  font-family: var(--varFontKarla);
+  align-self: flex-end;
+  text-align: right;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.heropage2 .nama1{
+  text-align: right;
+  align-self: flex-end;
+  font-size: 14px;
+  margin: 20px;
+  font-family: var(--varFontKarla);
+}
+/* page 2 end */
+/* page 3 start */
+.page3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative; /* penting untuk overlay ::before */
+    background-image: url(asset/img/page1.jpg);
+    min-height: 50vh; /* supaya bisa benar-benar tengah layar */
+    background-size: cover;        
+    background-position: center; 
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+.page3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+/* agar konten tetap di atas overlay */
+.page3 > * {
+    position: relative;
+    z-index: 2;
+}
+
+.containerpage3 {
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
+    color: #fff;
+    font-family: var(--varFontKarla);
+    padding: 20px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    border-radius: 12px;
+}
+
+/* styling tambahan untuk header */
+.heropage3 h4 {
+    font-family: var(--varFontKarla);
+    font-size: 30px;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.heropage3 .for{
+    text-align: left;
+    align-self: flex-start;
+    margin-top: 20px;
+    margin: 0 40px;
+}
+
+.for input{
+  margin-top: 10px;
+  min-width: 100%;
+  min-height: 20px;
+}
+
+.for .inputan{
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #fff; /* bisa ganti warna sesuai kebutuhan */
+  padding: 5px 0;
+  color: #fff; /* supaya teks kelihatan kalau di atas background gelap */
+  width: 100%; /* atau atur lebar sesuai kebutuhan */
+  outline: none;
+  font-size: 16px;
+}
+
+.for select{
+  margin-top: 10px;
+}
+
+.for label{
+  font-size: 13px;
+  font-family: var(--varFontKarla);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.for select{
+  min-width: 100%;
+  min-height: 20px;
+  padding: 10px;
+}
+
+.for .inputan1{
+  padding: 10px 20px;
+  font-family: var(--varFontKarla);
+  font-size: 13px;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  border: 2px solid #fff;
+}
+.for .inputan1:hover {
+  color: #fff;
+  border-color: #fbc531; /* misalnya kuning keemasan */
+  background-color: rgba(255, 255, 255, 0.05); /* transparan halus */
+  cursor: pointer;
+}
+/* page 3 end */
+
+/* page 4 start */
+.page4 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative; /* penting untuk overlay ::before */
+    background-color: antiquewhite;
+    min-height: 100vh; /* supaya bisa benar-benar tengah layar */
+    background-size: cover;        
+    background-position: center; 
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+
+
+/* agar konten tetap di atas overlay */
+.page4 > * {
+    position: relative;
+    z-index: 2;
+}
+
+.page4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 200vh;
+}
+
+.containerpage4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    font-family: var(--varFontKarla);
+    padding: 20px;
+    margin: 40px 20px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 12px;
+    border: 1px solid #251414;
+    color: #251414;
+    text-align: center;
+}
+
+.containerpage4 .heropage4 h4{
+  font-family: var(--varFontKarla);
+  font-weight: bold;
+  font-size: 30px;
+}
+
+.heropage4 .herocon{
+  text-align: left;
+  align-self: flex-start;
+}
+.heropage4 .herocon1{
+  text-align: right;
+  align-self: flex-end;
+}
+
+.herocon .judul{
+  margin: 20px 0;
+  font-family: var(--varFontKarla);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.herocon .wedhero{
+  display: flex;
+  gap: 30px;
+  margin-top: 15px;
+  margin-left: 10px;
+}
+ .wedhero .icon{
+  width: 30px;
+  height: 30px;
+ }
+
+.wedhero .dalam p{
+  font-family: var(--varFontKarla);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* herocon 1 */
+.heropage4 .herocon1{
+  margin-top: 20px;
+}
+
+.herocon1 .judul1{
+  margin: 20px 0;
+  font-family: var(--varFontKarla);
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.wedhero1 {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end; /* biar icon di kanan */
+  gap: 10px;
+  margin: 15px 10px;
+}
+
+.dalam1 {
+  text-align: right; /* teks rata kanan */
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  flex-shrink: 0;
+}
+
+.wedhero1 .dalam1 p{
+  font-family: var(--varFontKarla);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+
+/* container 41 start */
+.containerpage41 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    color: #fff;
+    font-family: var(--varFontKarla);
+    padding: 20px;
+    margin: 10px 20px;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 12px;
+    color: #251414;
+    text-align: center;
+}
+
+.containerpage41 .heropage41 h4{
+  font-size: 40px;
+  font-family: var(--varFontKarla);
+  font-weight: bold;
+}
+
+.containerpage41 img{
+  width: 80%;
+  height: 80%;
+  margin: 45px 20px;
+}
+
+.heropage41 .fontt{
+  text-align: right;
+  align-self: flex-end;
+  border-bottom: 1px solid #251414;
+  margin-left: 200px;
+}
+
+.fontt h3{
+  font-size: 25px;
+  font-family: var(--varFontKarla);
+}
+
+.fontt p{
+  margin-top: 13px;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: var(--varFontKarla);
+  padding-bottom: 40px;
+}
+
+/* fontt1 */
+.heropage41 .fontt1{
+  text-align: left;
+  align-self: flex-start;
+  border-bottom: 1px solid #251414;
+  margin-top: 40px;
+  margin-right: 160px;
+
+}
+
+.fontt1 h3{
+  font-size: 25px;
+  font-family: var(--varFontKarla);
+}
+
+.fontt1 p{
+  margin-top: 13px;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: var(--varFontKarla);
+  padding-bottom: 40px;
+}
+
+/* fontt11 */
+.heropage41 .fontt11{
+  text-align: right;
+  align-self: flex-end;
+  border-bottom: 1px solid #251414;
+  margin-left: 200px;
+}
+
+.fontt11 h3{
+  font-size: 25px;
+  font-family: var(--varFontKarla);
+}
+
+.fontt11 p{
+  margin-top: 13px;
+  font-size: 13px;
+  font-weight: bold;
+  font-family: var(--varFontKarla);
+  padding-bottom: 40px;
+}
+/* page 6 start */
+.page5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative; /* penting untuk overlay ::before */
+    background-color: antiquewhite;
+    min-height: 100vh; /* supaya bisa benar-benar tengah layar */
+    background-size: cover;        
+    background-position: center; 
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+
+
+
+/* agar konten tetap di atas overlay */
+.page5 > * {
+    position: relative;
+    z-index: 2;
+}
+
+.page5 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.containerpage5 {
+    display: flex;
+    margin: 0 auto;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: var(--varFontKarla);
+    padding: 20px;
+    /* margin: 40px 20px; */
+    width: 90%;
+    max-width: 500px;
+    border-radius: 12px;
+    color: #251414;
+    text-align: center;
+}
+
+
+.containerpage5 .heropage5 h4{
+  font-size: 45px;
+  font-family: var(--varFontKarla);
+  font-weight: bold;
+}
+
+.heropage5 p{
+  margin-top: 13px;
+  font-family: var(--varFontKarla);
+  font-size: 18px;
+}
+
+.garis-link1 {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: black;
+  font-family: var(--varFontKarla);
+  font-size: 20px;
+  font-weight: 600;
+  padding: 0 20px; /* beri ruang kiri-kanan untuk garis */
+}
+
+.garis-link1::before,
+.garis-link1::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 100px; /* panjang garis kiri & kanan */
+  height: 1px;
+  background-color: black;
+  transform: translateY(-50%);
+}
+
+.garis-link1::before {
+  right: 100%;       /* posisikan garis ke kiri */
+  margin-right: 10px;
+}
+
+.garis-link1::after {
+  left: 100%;        /* posisikan garis ke kanan */
+  margin-left: 10px;
+}
+/* galerry */
+.gallery-wrapper {
+  max-width: 1000px;
+  margin-top: 20px;
+  width: 100%;
+  min-height: 80%;
+  text-align: center;
+  color: white;
+  border-radius: 10px;
+  /* background-color: rgba(138, 120, 78, 0.4); */
+  position: relative;
+  z-index: 1;
+}
+
+.gallery-wrapper h2 {
+  font-size: 35px;
+  font-family: var(--varfont5);
+  margin-bottom: 15px;
+  margin-top: 15px;
+  color: rgba(240, 248, 255, 0.9);
+  
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+  padding: 0 10px;
+  margin-bottom: 20px;
+}
+
+.gallery-item {
+  aspect-ratio: 1 / 2;
+  overflow: hidden;
+  /* border-radius: 15px; */
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* page 6 start */
+.page6 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: relative; /* penting untuk overlay ::before */
+    background-image: url(asset/img/page2.jpg);
+    min-height: 50vh; /* supaya bisa benar-benar tengah layar */
+    background-size: cover;        
+    background-position: center; 
+    background-repeat: no-repeat;
+    z-index: 0;
+}
+.page6 > * {
+    position: relative;
+    z-index: 2;
+}
+.page6::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4); /* warna overlay transparan */
+    z-index: 1;
+}
+
+/* .page6 {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    min-height: 100vh;
+} */
+
+.containerpage6 {
+    display: flex;
+    margin: 0 auto;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-family: var(--varFontKarla);
+    padding: 20px;
+    /* margin: 40px 20px; */
+    width: 90%;
+    max-width: 500px;
+    border-radius: 12px;
+    color: #251414;
+    text-align: center;
+}
+
+.containerpage6 .heropage6 h3{
+  font-family: var(--varFontKarla);
+  font-size: 45px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.heropage6 p{
+  margin-top: 15px;
+  font-family: var(--varFontKarla);
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.8);
+}
